@@ -10,8 +10,6 @@ public class ProducerConsumerConcurrentExample {
     private static final Object lock = new Object();
 
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-
         final Runnable producer = () -> {
 
             int amount_so_far = 0;
@@ -38,7 +36,7 @@ public class ProducerConsumerConcurrentExample {
         Thread two = new Thread(consumer);
         one.setName("Producer");
         one.start();
-        one.setName("Consumer");
+        two.setName("Consumer");
         two.start();
     }
 }
